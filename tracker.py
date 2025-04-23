@@ -9,6 +9,7 @@ def tracker():
     email = request.args.get("email", "unknown")
     with open("opens.log", "a") as f:
         f.write(f"{datetime.now()} - Opened by {email}\n")
+    print(f"{datetime.now()} - Email opened by {email}")
     return send_file("tracker.gif", mimetype="image/gif")
 
 if __name__ == "__main__":
